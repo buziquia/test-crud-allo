@@ -1,64 +1,49 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1>Projeto CRUD Básico com Testes Unitários</h1> 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p>Este é um projeto Laravel que implementa um CRUD básico (Create, Read, Update, Delete) para uma aplicação API Back-end. O banco de dados utilizado é o MySQL e também implementa testes unitários básicos para verificar o funcionamento do código.<p>
 
-## About Laravel
+<h2>Requisitos</h2>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p>Antes de começar a utilizar este projeto, certifique-se de que você possui as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+PHP 7.4 ou superior
+Composer
+MySQL</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<h2>Instalação</h2>
 
-## Learning Laravel
+<p>Para instalar o projeto, siga os seguintes passos:</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<li>Clone este repositório em sua máquina:</li>
+<li>Acesse a pasta do projeto:</li>
+<li>Instale as dependências do projeto utilizando o Composer: 'composer install'</li>
+<li>Crie o arquivo .env a partir do .env.example:</li>
+<li>Configure o acesso ao banco de dados no arquivo .env</li>
+<li>Crie as tabelas do banco de dados: 'php artisan migrate --seed'</li>
+<li>Execute o comendado 'php artisan serve' para iniciar o projeto.</li>
+<li></li>
+<li></li>
+<li></li>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h2>Utilização</h2>
 
-## Laravel Sponsors
+<p>Para utilizar o projeto, você pode utilizar um cliente de API, como o Postman, por exemplo. As rotas disponíveis são:</p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<li>GET /api/usuarios: retorna todos os usuários cadastrados</li>
+<li>GET /api/usuarios/{id}: retorna um usuário específico a partir do seu ID</li>
+<li>POST /api/usuarios: cria um novo usuário</li>
+<li>PUT /api/usuarios/{id}: atualiza um usuário existente a partir do seu ID</li>
+<li>DELETE /api/usuarios/{id}: remove um usuário existente a partir do seu ID</li>
 
-### Premium Partners
+<p>Para cada uma das rotas, é necessário enviar os parâmetros em formato JSON no corpo da requisição.</p>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<h2>Teste unitário</h2>
 
-## Contributing
+<li>descomentar as rotas de teste no arquivo api.php</li>
+<li>criar um .env.testing</li> 
+<li>executar o comando 'php artisan migrate --env=testing'</li>
+<li>para testar executar o comando 'php artisan test'</li>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h3>Observações<h3>
+<p>o teste de update de usuários não passa.</p>
