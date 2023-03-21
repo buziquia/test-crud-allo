@@ -88,7 +88,7 @@ class TaskControllerTest extends TestCase
         ]);
     }
 
-    public function test_destroy()
+    public function testDestroy()
     {
         $task = Task::factory()->create();
         $response = $this->delete("api/tasktest/$task->id");

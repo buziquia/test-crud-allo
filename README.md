@@ -21,19 +21,16 @@ MySQL</p>
 <li>Configure o acesso ao banco de dados no arquivo .env</li>
 <li>Crie as tabelas do banco de dados: 'php artisan migrate --seed'</li>
 <li>Execute o comendado 'php artisan serve' para iniciar o projeto.</li>
-<li></li>
-<li></li>
-<li></li>
 
 <h2>Utilização</h2>
 
 <p>Para utilizar o projeto, você pode utilizar um cliente de API, como o Postman, por exemplo. As rotas disponíveis são:</p>
 
-<li>GET /api/usuarios: retorna todos os usuários cadastrados</li>
-<li>GET /api/usuarios/{id}: retorna um usuário específico a partir do seu ID</li>
-<li>POST /api/usuarios: cria um novo usuário</li>
-<li>PUT /api/usuarios/{id}: atualiza um usuário existente a partir do seu ID</li>
-<li>DELETE /api/usuarios/{id}: remove um usuário existente a partir do seu ID</li>
+<li>GET /api/user: retorna todos os usuários cadastrados</li>
+<li>GET /api/user/{id}: retorna um usuário específico a partir do seu ID</li>
+<li>POST /api/user: cria um novo usuário</li>
+<li>PUT /api/user/{id}: atualiza um usuário existente a partir do seu ID</li>
+<li>DELETE /api/user/{id}: remove um usuário existente a partir do seu ID</li>
 
 <p>Para cada uma das rotas, é necessário enviar os parâmetros em formato JSON no corpo da requisição.</p>
 

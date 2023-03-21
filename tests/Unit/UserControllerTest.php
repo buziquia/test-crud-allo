@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
@@ -12,7 +11,7 @@ class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_index()
+    public function testIndex()
     {
         $users = User::factory()->count(5)->create();
 
@@ -23,7 +22,7 @@ class UserControllerTest extends TestCase
             ->assertJson($users->toArray());
     }
 
-    public function test_store()
+    public function testStore()
     {
         $user = [
             'name' => 'Test User',
@@ -47,7 +46,7 @@ class UserControllerTest extends TestCase
         $this->assertTrue(Hash::check('secret', User::first()->password));
     }
 
-    public function test_show()
+    public function testShow()
     {
         $user = User::factory()->create();
 
@@ -57,35 +56,8 @@ class UserControllerTest extends TestCase
             ->assertJson($user->toArray());
     }
 
-    public function test_update()
+    public function testUpdate()
     {
-        // $user = User::factory()->create();
-
-        // $userData = [
-        //     'name' => 'Updated User',
-        //     'email' => 'updated@example.com',
-        //     'password' => 'newpassword',
-        // ];
-
-        // $response = $this->putJson('/api/usertest/' . $user->id, $userData);
-
-        // $response->assertStatus(200)
-        //     ->assertJson([
-        //         'user' => [
-        //             'name' => 'Updated User',
-        //             'email' => 'updated@example.com',
-        //         ],
-        //         'message' => 'User updated successfully',
-        //     ]);
-
-
-        // $updatedUser = User::find($user->id);
-
-        // $this->assertEquals('Updated User', $updatedUser->name);
-        // $this->assertEquals('updated@example.com', $updatedUser->email);
-
-        // $this->assertTrue(Hash::check('newpassword', $updatedUser->password));
-
         $user = User::factory()->create(['name' => 'Tarefa']);
 
         $response = $this->putJson('/api/usertest/' . $user->id, [
@@ -111,7 +83,7 @@ class UserControllerTest extends TestCase
     }
 
 
-    public function test_destroy()
+    public function testDestroy()
     {
         $user = User::factory()->create();
 
