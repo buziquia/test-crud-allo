@@ -43,6 +43,9 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+
+        info('update method called with data:', $request->all());
+
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email,' . $user->id,
@@ -55,9 +58,18 @@ class UserController extends Controller
             unset($validatedData['password']);
         }
 
-        $user->update($validatedData);
+        $isUpdated = $user->update($validatedData);
 
-        return response()->json($user, 200);
+        if ($isUpdated) {
+            return response()->json([
+                'user' => $user->fresh(),
+                'message' => 'User updated successfully'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Failed to update user'
+            ], 500);
+        }
     }
 
     public function destroy($id)
